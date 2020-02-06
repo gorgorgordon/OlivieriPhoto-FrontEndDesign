@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>FedericoOliveriPhotography</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:200,400,800" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  </head>
+<body style="background-color: black;">
+  
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" id="brand" href="/"><i class="fa fa-camera"></i>olivieri.photo</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link active" href="/">.home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/about">.bio</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link active" href="/gallery">.gallery</a>
+      </li>
+      <!--<li class="nav-item">-->
+      <!--  <a class="nav-link active" href="/about">.contact</a>-->
+      <!--</li>-->
+      <% if(currentUser){ %>
+      <li class="nav-item">
+        <a class="nav-link btn btn-outline-light btn-sm" href="/logout">LogOut</a>
+      </li>
+      <% } %>
+    </ul>
+  </div>
+</nav>
+
+ <div class="container flash">
+        
+        <% if(error && error.length > 0){ %>
+            <div class="alert alert-danger" role="alert">
+                <%= error %>
+            </div>
+        <% } %>
+        
+        <% if(success && success.length > 0){ %>
+            <div class="alert alert-primary" role="alert">
+                <%= success %>
+            </div>
+        <% } %>
+        
+</div>
+
+  <br>
+
+
+<div class="container"> 
+  <h1>.gallery</h1>
+  <% if(currentUser){ %>
+  <div class="d-flex justify-content-center" style="margin-bottom: 50px;">
+  <a href="/gallery/new" class="btn btn-outline-light" id="add">ADD</a>
+  </div>
+  <% } %>
+      <div class="container gallery">
+          <div class="section1">
+                  <% images.forEach(function(image){ %>
+                      <div class="pic red">
+                          <img src="<%= image.url %>">
+                      </div>
+                      <% if(currentUser){ %>
+                      <div class="buttons edit">
+                              <a class="btn btn-outline-light btn-sm" href="/gallery/<%= image._id %>/edit">EDIT</a>
+                              <form action="/gallery/<%= image._id %>?_method=DELETE" style="display:inline;" method="POST">
+                              <button class="btn btn-outline-light btn-sm">DELETE</button>   
+                              </form>
+                      </div>
+                      <% } %>
+                  <% }) %>
+          </div>
+      </div>
+</div>  
+    
+     
+<% include ./partials/footer %>
