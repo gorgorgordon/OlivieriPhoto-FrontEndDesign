@@ -13,8 +13,12 @@ const Image = require('./models/image');
 
 
 //mongoose.connect(process.env.DATABASEURL, {useNewUrlParser: true});
- mongoose.connect("mongodb://localhost:27017/oliveri_photo", {useNewUrlParser: true});
- 
+ mongoose.connect("mongodb://localhost:27017/oliveri_photo", {
+   useUnifiedTopology: true,
+   useNewUrlParser: true
+ });
+
+
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(require('express-session')({
