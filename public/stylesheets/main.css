@@ -1,145 +1,56 @@
-#backgroundMain {
-  background-image: url(https://res.cloudinary.com/danieltisue/image/upload/v1550613745/oliveri.foto/black_Osgoode_Night_copy.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
+:root {
+    --menu-speed: .75s;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+body {
   background-color: #171717;
+  color: white;
 }
 
-.container.flash {
+.container {
+    max-width: 960px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 3rem;
+}
+
+
+
+
+
+.showcase .showcase-inner {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 100%;
+}
+
+
+.showcase .showcase-inner img {
+    width: 100%;
+}
+
+
+
+.container-flash {
     margin-top: 100px;
     margin-bottom: -130px;
     text-align: center;
 }
 
 
-.hero {
-    position: relative;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    min-height: 100vh;
-}
 
-.hero .background-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("https://res.cloudinary.com/danieltisue/image/upload/v1552229596/oliveri.foto/Gear_Stuff.jpg");
-    background-size: cover;
-    z-index: -1;
-    background-color: black;
 
-}
-
-h1 {
-  text-align: center;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  color: white;
-  padding-top: 130px;
-  padding-bottom: 40px;
-  -webkit-transition-property: all;
-  -o-transition-property: all;
-  transition-property: all;
-  -webkit-transition-duration: 1s;
-       -o-transition-duration: 1s;
-          transition-duration: 1s;
-  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-       -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-          transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-h1:hover {
-    color: white;
-    text-shadow: 2px 2px black;
-    /*text-decoration: underline;*/
-    text-shadow: 1px 1px black;
-    -webkit-transform: translate(-8px);
-        -ms-transform: translate(-8px);
-            transform: translate(-8px);
-    cursor: pointer;
-}
-h3 {
-  text-align: center;
-  font-family: 'Roboto', sans-serif;
-  font-size: 23px;
-  font-weight: 400;
-  color: white;
-  padding-top: 130px;
-  padding-bottom: 20px;
-  text-shadow: 2px 2px #555555;
-}
-h5 {
-    color: white;
-    text-align: center;
-    padding-top: 40px;
-    padding-bottom: 80px;
-}
 
 /******************************************/
 /*header UI NAV */
 /******************************************/
-a {
-  text-decoration: none;
-  color: white;
-}
-
- a:hover {
-  text-decoration: none;
-  color: white;
-  text-shadow: 1px 1px black;
-}
-
-.nav-item a {
-    /*color: white !important;*/
-    opacity: .70;
-}
-
-.nav-link:hover {
-    color: black !important;
-    text-shadow: 1px 1px white;
-    opacity: 1;
-}
-
-.icon {
-    -webkit-transition-property: -webkit-transform;
-    transition-property: -webkit-transform;
-    -o-transition-property: transform;
-    transition-property: transform;
-    transition-property: transform, -webkit-transform;
-    -webkit-transition-duration: 1s;
-         -o-transition-duration: 1s;
-            transition-duration: 1s;
-}
-.icon:hover{
-    -webkit-transform: scale(1.2);
-        -ms-transform: scale(1.2);
-            transform: scale(1.2);
-    text-shadow: 1px 1px black;
-}
-
-#brand {
-   color: white;
-   font-family: 'Oswald', sans-serif;
-   font-size: 28px;
-   font-weight: 400;
-   letter-spacing: 10px;
-   /*padding-left: 50px;*/
-   padding-bottom: 15px;
-   text-shadow: 2px 2px black;
- }
- 
- #brand:hover {
-   color: black;
-   /*-webkit-transform: rotateY(360deg);*/
-   /*        transform: rotateY(360deg);*/
-   /*-webkit-transition-duration: 1.2s;*/
-   /*     -o-transition-duration: 1.2s;*/
-   /*        transition-duration: 1.2s;*/
-   text-shadow: 2px 2px white;
-   cursor: pointer;
- }
 
 /******************************************/
 /*start of gallery UI*/
