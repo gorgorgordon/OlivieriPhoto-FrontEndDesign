@@ -12,6 +12,7 @@ body {
   color: white;
 }
 
+
 .container {
     max-width: 960px;
     margin: auto;
@@ -19,32 +20,87 @@ body {
     padding: 0 3rem;
 }
 
+/* Landing page specifics - main page */
+.landing-container, .featured-container, .bio-container {
+    width: 100%;
+    max-width: 1200px;
+    height: 100vh;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0 3rem;
+}
 
+.landing-text-img {
+    width: 100%;
+    height: 100%;   
+}
 
-
+.landing-text-img img {
+    position: absolute;
+    top:15.5%;
+    left: 9.2%;
+    width: 75%;
+    z-index: -1;
+}
 
 .showcase .showcase-inner {
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-height: 100%;
+margin: 0 auto;
+position: absolute;
+top: 35%;
+left: 15%;
+height: 100vh;
 }
 
 
 .showcase .showcase-inner img {
-    width: 100%;
+    width: 75%;
+    
 }
 
-
-
+/* Flash ux container */
 .container-flash {
     margin-top: 100px;
     margin-bottom: -130px;
     text-align: center;
 }
 
+/* Featured section and Bio section container/ Contact section container*/
 
+section.featured, section.contact {
+    height: 100vh;
+    background-color: #ffffffee;
+    overflow: visible;
+    width: 100vw;
+}
+
+.featured-container > div, .bio-container > div, .contact-container > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 3rem;
+}
+.featured-container > div img {
+    /* z-index: 1; */
+    width: 35%;
+}
+
+/* Bio section */
+section.bio {
+    height: 100vh;
+    background-color: #171717;
+    overflow: visible;
+    width: 100vw;
+}
+
+.bio-container > div img {
+    width: 15%;
+}
+
+/* Contact Section  */
+
+.contact-container > div img {
+    width: 28%;
+}
 
 
 

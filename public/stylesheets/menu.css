@@ -1,18 +1,26 @@
+.nav-brand img {
+  position: fixed;
+  top: 60px;
+  left: 4rem;
+  overflow: visible;
+  width: 15rem;
+}
+
 .menu-wrap {
   position: fixed;
   top: 50px;
-  right: 4rem;
+  right: 6rem;
   z-index: 1;
 }
 
 .menu-wrap .toggler {
   position: absolute;
   top: 0;
-  left: 0;
+  right: -3rem;
   z-index: 2;
   cursor: pointer;
-  width: 50px;
-  height:50px;
+  width: 60px;
+  height:60px;
   opacity:0;
 }
 
@@ -23,8 +31,8 @@
   z-index: 1;
   width: 60px;
   height: 60px;
-  padding: 1rem;
-  background-color: black;
+  padding: .8rem;
+  background-color: inherit;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,13 +41,16 @@
 .menu-wrap .hamburger  > div {
 position: relative;
 width: 100%;
-height: 2px;
-background-color: #ffffff;
+height: 3px;
+background-color: #d2d2d2;
 display: flex;
 align-items: center;
 justify-content: center;
+box-shadow: 1px 1px #171717;
+transition: all 0.4s ease;
 }
 
+/* Top and Bottom Lines */
 .menu-wrap .hamburger > div:before,
 .menu-wrap .hamburger > div:after {
   content: '';
@@ -47,10 +58,103 @@ justify-content: center;
   z-index: 1;
   top: -10px;
   width: 100%;
-  height: 2px;
+  height: 3px;
   background: inherit;
+  box-shadow: 1px 1px #171717;
 }
 
+/* Moves line down */
 .menu-wrap .hamburger > div:after {
   top: 10px;
+}
+
+/* Toggler animate */
+.menu-wrap .toggler:checked + .hamburger > div {
+  transform: rotate(135deg);
+}
+/* Turn lines into x */
+.menu-wrap .toggler:checked + .hamburger > div:before,
+.menu-wrap .toggler:checked + .hamburger > div:after {
+top: 0;
+transform: rotate(90deg);
+}
+/* Rotate on hover when checked */
+.menu-wrap .toggler:checked:hover + .hamburger > div {
+  transform: rotate(225deg);
+}
+
+
+/* menu list item images */
+li {
+  list-style: none;
+}
+
+.menu-wrap .menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-wrap .menu > div {
+  background-color: #ffffff;
+  border-radius: 50%;
+  width: 200vw;
+  height: 200vh;
+  z-index: 3;
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0);
+  transition: all .4s ease;
+}
+
+.menu-wrap .menu > div > div {
+  max-width: 90vw;
+  max-height: 100vh;
+  opacity: 0;
+  transition: opacity .4s ease;
+}
+
+
+/* menu item image sizing */
+img.menu-image {
+    width: 15rem;
+}
+#bio {
+  width: 6rem;
+}
+
+/* menu svg hover effect */
+.overlay {
+  background-color: none;
+  transition: all .4s ease;
+  
+}
+
+.overlay:hover {
+  background-color: teal;
+  opacity: .5;
+}
+
+/* Show menu */
+.menu-wrap .toggler:checked ~ .menu {
+  visibility: visible;
+}
+
+.menu-wrap .toggler:checked ~ .menu > div {
+transform: scale(1);
+transition-duration: .4s;
+}
+
+.menu-wrap .toggler:checked ~ .menu > div > div {
+opacity: 1;
+transition: opacity 0.4s ease;
 }
