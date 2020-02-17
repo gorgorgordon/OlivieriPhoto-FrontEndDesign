@@ -11,18 +11,20 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
      <link rel="stylesheet" type="text/css" href="/stylesheets/menu.css">
+    <script src="/assets/menu.js" type="text/javascript"></script>
   </head>
+
 <body>
 <div class="landing-container">
-<div class="logo">
-    <ul>
-      <li class="nav-brand">
-        <a href="#">
-          <img src="/images/LogoOlivieriPhotoWord.svg">
-        </a>
-      </li>
-    </ul>
-</div>
+        <div class="logo">
+            <ul>
+              <li class="nav-brand">
+                <a href="/">
+                  <img src="/images/LogoOlivieriPhotoWord.svg">
+                </a>
+              </li>
+            </ul>
+        </div>
   <div class="menu-wrap">
       <input type="checkbox" class="toggler">
         <div class="hamburger">
@@ -37,7 +39,7 @@
           <ul>      
                 <li class="nav-item-menu">
                   <div class="overlay">
-                    <a href="#">
+                    <a class="nav-link" href="/gallery">
                       <img class="menu-image" src="/images/Gallery_Menu-title.svg">
                     </a>
                   </div>
@@ -45,7 +47,7 @@
 
                 <li class="nav-item-menu">
                   <div class="overlay">
-                    <a href="#">
+                    <a class="nav-link" href="/#featured-anchor" onclick="hideMenu()">
                     <img class="menu-image" src="/images/Featured_Menu-titile.svg">
                   </a>
                   </div>
@@ -53,7 +55,7 @@
 
                 <li class="nav-item-menu">
                   <div class="overlay">
-                    <a href="#">
+                    <a class="nav-link" href="/#contactanchor" onclick="hideMenu()">
                   <img class="menu-image" src="images/Contact-Menu-title.svg">
                 </a>
                 </div>
@@ -61,7 +63,7 @@
 
                 <li class="nav-item-menu">
                   <div class="overlay">
-                    <a href="#">
+                    <a class="nav-link" href="/#bio-anchor" onclick="hideMenu()">
                   <img class="menu-image" id="bio" src="images/Bio-Menu-title.svg">
                 </a>
                   </div>
@@ -72,8 +74,8 @@
           
             
             <% if(currentUser){ %>
-            <li class="nav-item">
-              <a class="nav-link btn btn-outline-light btn-sm" href="/logout">LogOut</a>
+            <li class="nav-item-menu">
+              <a class="nav-link" href="/logout">LogOut</a>
             </li>
             <% } %>
 

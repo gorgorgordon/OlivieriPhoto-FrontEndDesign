@@ -1,11 +1,27 @@
-.nav-brand img {
-  position: fixed;
-  top: 60px;
-  left: 4rem;
-  overflow: visible;
-  width: 15rem;
+/* Nav logo */
+div.logo > ul {
+    width: 100%;
+    padding: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+.nav-brand {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
 }
 
+.nav-brand img {
+  position: fixed;
+  /* top: 60px;
+  left: 4rem; */
+  overflow: visible;
+  width: 10rem;
+}
+
+/* Menu style */
 .menu-wrap {
   position: fixed;
   top: 50px;
@@ -46,7 +62,7 @@ background-color: #d2d2d2;
 display: flex;
 align-items: center;
 justify-content: center;
-box-shadow: 1px 1px #171717;
+/* box-shadow: 1px 1px #171717; */
 transition: all 0.4s ease;
 }
 
@@ -60,7 +76,7 @@ transition: all 0.4s ease;
   width: 100%;
   height: 3px;
   background: inherit;
-  box-shadow: 1px 1px #171717;
+  /* box-shadow: 1px 1px #171717; */
 }
 
 /* Moves line down */
@@ -83,7 +99,6 @@ transform: rotate(90deg);
   transform: rotate(225deg);
 }
 
-
 /* menu list item images */
 li {
   list-style: none;
@@ -95,12 +110,16 @@ li {
   left: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  opacity: 0;
   visibility: hidden;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+
+
 
 .menu-wrap .menu > div {
   background-color: #ffffff;
@@ -144,9 +163,12 @@ img.menu-image {
   opacity: .5;
 }
 
+
 /* Show menu */
 .menu-wrap .toggler:checked ~ .menu {
+  opacity:1;
   visibility: visible;
+  transition: all .4s ease;
 }
 
 .menu-wrap .toggler:checked ~ .menu > div {
@@ -158,3 +180,5 @@ transition-duration: .4s;
 opacity: 1;
 transition: opacity 0.4s ease;
 }
+
+
