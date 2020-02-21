@@ -17,8 +17,8 @@
         <path id="Path_5" data-name="Path 5" d="M51.507,0V33.651H0V5.494A5.494,5.494,0,0,1,5.494,0Z" fill="#fff"/>
         <path id="Path_6" data-name="Path 6" d="M89.007,5.494V33.651H37.5V0H83.513A5.494,5.494,0,0,1,89.007,5.494Z" transform="translate(14.007)" fill="#fff"/>
         <path id="Path_7" data-name="Path 7" d="M51.507,27V92.928H5.494A5.357,5.357,0,0,1,0,87.709V27Z" transform="translate(0 10.085)" fill="#fff"/>
-        <circle id="Ellipse_3" data-name="Ellipse 3" cx="25.41" cy="25.41" r="25.41" transform="translate(25.41 39.145)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="3"/>
-        <ellipse id="Ellipse_4" data-name="Ellipse 4" cx="19" cy="19.5" rx="19" ry="19.5" transform="translate(32.013 45.014)" stroke="#fff" stroke-miterlimit="10" stroke-width="1"/>
+        <circle id="Ellipse_3" data-name="Ellipse 3" cx="25.41" cy="25.41" r="25.41" transform="translate(25.41 39.145)" fill="none" stroke="#d2d2d2" stroke-miterlimit="10" stroke-width="3"/>
+        <ellipse id="Ellipse_4" data-name="Ellipse 4" cx="19" cy="19.5" rx="19" ry="19.5" transform="translate(32.013 45.014)" stroke="#d2d2d2" stroke-miterlimit="10" stroke-width="1"/>
         <rect id="Rectangle_19" data-name="Rectangle 19" width="15.109" height="15.109" transform="translate(80.35 7.554)" fill="#fff"/>
         <path id="Path_8" data-name="Path 8" d="M73.109,6.374V20.109H59.374V6.374H73.109M73.933,5H58.549A.549.549,0,0,0,58,5.549V20.933a.549.549,0,0,0,.549.549H73.933a.549.549,0,0,0,.549-.549V5.549A.549.549,0,0,0,73.933,5Z" transform="translate(21.664 1.868)"/>
         <rect id="Rectangle_20" data-name="Rectangle 20" width="87.905" height="15.109" transform="translate(7.554 7.554)"/>

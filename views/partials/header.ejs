@@ -15,77 +15,63 @@
   </head>
 
 <body>
-<div class="landing-container">
-        <div class="logo">
-            <ul>
-              <li class="nav-brand">
-                <a href="/">
-                  <img src="/images/LogoOlivieriPhotoWord.svg">
-                </a>
-              </li>
-            </ul>
-        </div>
-  <div class="menu-wrap">
-      <input type="checkbox" class="toggler">
-        <div class="hamburger">
-          <div>
-
-          </div>
-        </div>
-  
-    <div class="menu">
-      <div>
-        <div>
-          <ul>      
-                <li class="nav-item-menu">
-                  <div class="overlay">
-                    <a class="nav-link" href="/gallery">
-                      <img class="menu-image" src="/images/Gallery_Menu-title.svg">
-                    </a>
-                  </div>
-                </li>
-
-                <li class="nav-item-menu">
-                  <div class="overlay">
-                    <a class="nav-link" href="/#featured-anchor" onclick="hideMenu()">
-                    <img class="menu-image" src="/images/Featured_Menu-titile.svg">
-                  </a>
-                  </div>
-                </li>
-
-                <li class="nav-item-menu">
-                  <div class="overlay">
-                    <a class="nav-link" href="/#contactanchor" onclick="hideMenu()">
-                  <img class="menu-image" src="images/Contact-Menu-title.svg">
-                </a>
-                </div>
-                </li>
-
-                <li class="nav-item-menu">
-                  <div class="overlay">
-                    <a class="nav-link" href="/#bio-anchor" onclick="hideMenu()">
-                  <img class="menu-image" id="bio" src="images/Bio-Menu-title.svg">
-                </a>
-                  </div>
-                </li>
-                
-              
-            
-          
-            
-            <% if(currentUser){ %>
-            <li class="nav-item-menu">
-              <a class="nav-link" href="/logout">LogOut</a>
-            </li>
-            <% } %>
 
 
-            </ul>
-        </div>
-      </div>
+  <nav>
+   <div class="nav-container">
+    <div class="nav-brand">
+      <a href="/">
+        <img src="/images/LogoOlivieriPhotoWord.svg">
+      </a>
     </div>
-</div>
+    <ul class="nav-links">
+        <li class="nav-item-menu">
+          <div class="overlay">
+            <a class="nav-link" href="/gallery">
+              <img class="menu-image" src="/images/Gallery_Menu-title.svg">
+            </a>
+          </div>
+        </li>
+      
+        <li class="nav-item-menu">
+          <div class="overlay">
+            <a class="nav-link" href="/#featured-anchor" onclick="hideMenu()">
+              <img class="menu-image" src="/images/Featured_Menu-titile.svg">
+            </a>
+          </div>
+        </li>
+      
+        <li class="nav-item-menu">
+          <div class="overlay">
+            <a class="nav-link" href="/#contactanchor" onclick="hideMenu()">
+              <img class="menu-image" src="images/Contact-Menu-title.svg">
+            </a>
+          </div>
+        </li>
+      
+        <li class="nav-item-menu">
+          <div class="overlay">
+            <a class="nav-link" href="/#bio-anchor" onclick="hideMenu()">
+              <img class="menu-image" id="bio" src="images/Bio-Menu-title.svg">
+            </a>
+          </div>
+        </li>
+      
+        <% if(currentUser){ %>
+        <li class="nav-item-menu">
+          <a class="nav-link" href="/logout">LogOut</a>
+        </li>
+        <% } %>
+      </ul>
+    <div class="hamburger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+   </div>   
+  </nav>
 
+<div class="landing-container">
   
  
 <!-- start of flash container -->
