@@ -23,13 +23,5 @@ function hideMenu() {
  }
 }
 
-// const x = window.matchMedia("(max-width: 480px");
-// const linkTag = document.querySelector('.nav-brand-link');
-// const brandHref = document.querySelector('[href="/"]');
 
-// function brandHide(x) {
-//   if (x.matches) {
-//     brandHref = '';
-//   }
-// }
 
