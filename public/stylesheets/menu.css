@@ -1,44 +1,239 @@
 
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
+/* Olivieri photo logo */
 
-nav {
-  position: fixed;
-  width: 100%;
-  height: 15vh;
-  padding: 2%;
-  background-color: transparent;
-}
-
-.nav-container {
-  width: 100%;
-  max-width: 1200px;
-  padding: 1.5rem;
-}
-
-li {
-  list-style: none;
-}
-
-.nav-brand img {
+div.nav-brand {
+  position: relative;
+  top: 50px;
+  left: 50px;
   width: 12rem;
-  color: #d2d2d2
+  cursor: pointer;
+  z-index: 3;
+}
+
+.nav-brand-link {
+display: inline-block;
+height: 75px;
+width: 270px;
+cursor: pointer;
+}
+  
+
+
+div.nav-brand img {
+  width: 12rem;
+  color: #d2d2d2;
+  cursor: pointer;
 }
 
 
-.menu-image {
-  width: 30%;
+@media only screen and (max-width: 480px) {
+  div.nav-brand {
+    display: none;
+  }
 }
 
-#bio {
-  width: 12%;
+
+ @media screen and (max-width: 350px) {
+
+
+div.nav {
+  width: 100%;
+  position: fixed;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding-top: 0;
+  /* z-index: 2; */
 }
 
+
+  div.hamburger {
+  position: fixed !important;
+  top: 10px !important;
+  right: 10px !important;
+  cursor: pointer !important;
+  z-index: 5 !important;
+  transition: all .5s ease; 
+}
+
+  .ul-alignment {
+  width: 100vw !important;
+  height: 100vh !important;
+  position: fixed !important;
+  top: 25px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  padding-left: 25px !important;
+  background-color: #ffffff !important;
+  opacity: 0;
+  transition: all .5s ease !important;
+}
+.open {
+opacity: 1;
+} 
 
 .nav-item-menu {
+ height: 4rem !important;
+}
+.title-text {
+  font-size: 1rem !important;
+}
+
+.title-shadow {
+  font-size: 2rem !important;
+}
+.rotate-bottom {
+transform: rotate(-45deg) translate(7px, -8px) !important;
+transition: all .5s ease !important;
+}
+
+.rotate-top{
+transform: rotate(45deg) !important;
+transition: all .5s ease !important;
+}
+
+.remove-center {
+display: none !important;
+}
+}
+/* ******************************************* */
+/* nav styling */
+div.nav {
+  width: 100%;
+  position: fixed;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding-top: 50px;
+  z-index: 2;
+}
+
+.ul-alignment {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  top: -50px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  clip-path: circle(100px at 90% -20%);
+  transition: all .5s ease;
+}
+
+.open {
+clip-path: circle(1800px at 90% -10%);
+}
+
+.nav-item-menu {
+  height: 6rem;
+  cursor: pointer;
+}
+
+.nav-item-menu:hover
+ {
+  overflow: hidden;
+  background-color: #4999b2;
+  opacity: .75;
+  transform: scale(1.2);
+  transition: all .4s ease;
+ }
+
+/* ******************************************* */
+/* menu text styling */
+.title-text {
+  position: relative;
+  left: 0;
+  font-size: 2rem;
+  font-family: 'Oswald' , Arial, Helvetica, sans-serif;
+  color: #545F69;
+  letter-spacing: .1rem;
+  font-weight: 400;
+  z-index: 3;
+}
+
+.title-shadow {
+  position: relative;
+  top: -50px;
+  right: -25px;
+  font-family: 'Oswald' , Arial, Helvetica, sans-serif;
+  font-size: 3rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 
+  -1px -1px 0 #d2d2d2,  
+    1px -1px 0 #d2d2d2,
+    -1px 1px 0 #d2d2d2,
+     1px 1px 0 #d2d2d2;
+    
+}
+
+
+/* ******************************************* */
+/* icon placement */
+#icon-placement {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  z-index: 8;
+}
+.nav-item-icon {
+  cursor: pointer;
+}
+a.nav-link-icon svg {
+  width: 2rem;
+  padding-right: 10px;
+  cursor: pointer;
+}
+
+.nav-link-icon svg:hover {
+  fill: #4999b2;
+  transform: scale(1.2);
+  transition: all .4s ease;
+}
+
+/* .nav-item-menu {
   display: none;
+} */
+
+/* ******************************************* */
+/* Hamburger style */
+div.hamburger {
+  position: fixed;
+  top: 50px;
+  right: 50px;
+  cursor: pointer;
+  z-index: 5;
+  transition: all .5s ease;
+}
+
+/* .hamburger:hover {
+ transform: rotate(225deg);
+} */
+
+.rotate-bottom {
+transform: rotate(-45deg) translate(7px, -8px);
+transition: all .5s ease;
+}
+
+.rotate-top{
+transform: rotate(45deg);
+transition: all .5s ease;
+}
+
+.remove-center {
+display: none;
+}
+
+.hamburger div.line {
+  height: 3px;
+  width: 35px;
+  margin: 8px;
+  background-color: #d2d2d2;
+  
 }
 
