@@ -11,6 +11,7 @@ navlinks.classList.toggle('open');
 topper.classList.toggle('rotate-top');
 bottom.classList.toggle('rotate-bottom');
 middle.classList.toggle('remove-center');
+
 });
 
 
@@ -21,6 +22,7 @@ function hideMenu() {
    bottom.classList.remove("rotate-bottom");
    middle.classList.remove("remove-center");
  }
+
 }
 
 
