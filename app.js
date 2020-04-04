@@ -162,10 +162,7 @@ app.delete('/gallery/:id', isLoggedIn, (req, res) => {
     });
 });
 
-//ABOUT ROUTES
-app.get('/about', (req, res) => {
-   res.render('about'); 
-});
+
 
 //LOGIN OWNER UPDATE OPTIONS ROUTE
 //only used to register owner of site- does not support users.
