@@ -9,7 +9,13 @@ body {
   background-color: #ffffff;
   color: #d2d2d2;
   margin: 0 auto;
-  
+  overscroll-behavior: none;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 h1 {
@@ -18,9 +24,7 @@ h1 {
   font-style: normal;
   font-size: 3rem;
 }
-.brand-name {
-    letter-spacing: .6rem;;
-}
+
 
 h2 {
   font-family: 'titular', sans-serif;
@@ -40,6 +44,7 @@ font-size: 2rem;
 a {
   text-decoration: none;
   color: #d2d2d2;
+  cursor: pointer;
   transition: all .4s ease;
 }
 
@@ -52,31 +57,101 @@ li {
     list-style: none;
 }
 
+/* ============================================================== */
+/* Containers and Section specifics*/
+/* ============================================================== */
 
+
+
+section.landing, section.featured, section.contact, section.bio {
+    height: 100vh;
+    background-color: #ffffff;
+    width: 100vw;
+}
+
+section.landing {
+    background: url(/images/Artboard.jpg) no-repeat center center;
+    background-size: 100% auto;
+}
 
 /* container specifics */
 .landing-container, .featured-container, .bio-container, .contact-container {
     width: 100%;
-    /* max-width: 1200px; */
-    height: 100vh;
+    height: 100%;
     margin: 0 auto;
 }
 
+.featured-container, .bio-container, .contact-container {
+    padding: 0 3rem;
+}
 
-/* ************************************************ */
+/* ============================================================== */
+/* Olivieri photo logo */
+/* ============================================================== */
+
+.nav-brand {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+}
+
+div.nav-brand img {
+  width: 35%;
+  padding-left: 3rem;
+}
+
+.page-header {
+    padding: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+/* ============================================================== */
+/* Featured section */
+/* ============================================================== */
+
+
+
+
+/* ============================================================== */
 /* media queries */
+/* ============================================================== */
 
+@media only screen and (max-width: 900px) {
 
-@media only screen and (max-width: 680px) {
-    
-    h1, h2 {
-        font-size: 2rem;
-    }
-
+ h1 {
+     font-size: 2.3rem;
+ }
 
 }
 
+@media only screen and (max-width: 700px) {
 
+section.landing {
+    background-image: none;
+}
+
+div.nav-brand img {
+    width: 60%;
+  
+}
+
+ h2 {
+    font-size: 2rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+
+    div.nav-brand img {
+    width: 100%;
+    padding: 2rem;
+}
+
+}
 
 /* ************************************************ */
 
@@ -91,11 +166,7 @@ li {
 }
 /* ************************************************ */
 
-section.showcase {
-    width: 100vw;
-    height: 100vh;
-    /* overflow: hidden; */
-}
+
 
 /* Flash ux container */
 .container-flash {
@@ -104,21 +175,7 @@ section.showcase {
     text-align: center;
 }
 
-/* Featured section and Bio section container/ Contact section container*/
 
-section.featured, section.contact, section.bio {
-    height: 100vh;
-    background-color: #ffffff;
-    /* overflow: visible; */
-    width: 100%;
-}
-
-.featured-container > div, .bio-container > div, .contact-container > div {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding: 3rem;
-}
 
 
 
@@ -237,59 +294,7 @@ div.pic:hover img{
     padding: 5px;
 }
 
-/************************************/
-/*artist profile UI*/
-/************************************/
-.col-sm-6 p {
-  font-size: 19px;
-}
-.container.mine {
-/*    max-height: 75vh;*/
-    /*padding-top: 0px;*/
-    /*border: 1px solid white;*/
-/*    margin-bottom: 45px;*/
-    /*padding-bottom: 20px;*/
-    position: relative;
-}
-#paragraph {
-    padding-bottom: 32px;
-}
-
-.container.mine h1 {
-    padding: 100px 0 15px 0;
-}
-
-.list-unstyled {
-    padding: 2px;
-}
-ul.list-unstyled li a {
-    color: white !important;
-    -webkit-transition-property: -webkit-transform;
-    transition-property: -webkit-transform;
-    -o-transition-property: transform;
-    transition-property: transform;
-    transition-property: transform, -webkit-transform;
-    -webkit-transition-duration: 1s;
-         -o-transition-duration: 1s;
-            transition-duration: 1s;
-}
-ul.list-unstyled li a:hover {
-    cursor: pointer !important;
-    -webkit-transform: scale(1.2);
-        -ms-transform: scale(1.2);
-            transform: scale(1.2);
-}
-#about {
-    color: white;
-    -webkit-text-decoration: bold;
-            text-decoration: bold;
-    text-shadow: 1px 1px #555555;
-}
-#me {
-    display: inline !important;
-    font-family: 'Oswald', sans-serif !important;
-    font-size: 18px !important;
-}
+/
 
 /************************************/
 /*Image Form UI*/
@@ -313,4 +318,20 @@ ul.list-unstyled li a:hover {
     background-color: black;
     max-width: 700px;
     padding: 25px;
+}
+
+#symbols {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 1rem;
+    font-family: 'titular', sans-serif;
+    font-size: 1rem;
+    letter-spacing: .2rem;
+    color: #d2d2d2;
+    
 }
