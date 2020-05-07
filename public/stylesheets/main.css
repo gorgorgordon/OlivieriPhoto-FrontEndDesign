@@ -1,3 +1,43 @@
+/*
+ * The Typekit service used to deliver this font or fonts for use on websites
+ * is provided by Adobe and is subject to these Terms of Use
+ * http://www.adobe.com/products/eulas/tou_typekit. For font license
+ * information, see the list below.
+ *
+ * bebas-neue-by-fontfabric:
+ *   - http://typekit.com/eulas/00000000000000003b9b1557
+ *   - http://typekit.com/eulas/00000000000000003b9b155a
+ * titular:
+ *   - http://typekit.com/eulas/00000000000000003b9b0484
+ *
+ * © 2009-2020 Adobe Systems Incorporated. All Rights Reserved.
+ */
+/*{"last_published":"2020-03-28 17:42:23 UTC"}*/
+
+@import url("https://p.typekit.net/p.css?s=1&k=bee3ofa&ht=tk&f=35533.37896.37899&a=17545688&app=typekit&e=css");
+
+@font-face {
+font-family:"titular";
+src:url("https://use.typekit.net/af/36242b/00000000000000003b9b0484/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("woff2"),url("https://use.typekit.net/af/36242b/00000000000000003b9b0484/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("woff"),url("https://use.typekit.net/af/36242b/00000000000000003b9b0484/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("opentype");
+font-display:auto;font-style:normal;font-weight:300;
+}
+
+@font-face {
+font-family:"bebas-neue-by-fontfabric";
+src:url("https://use.typekit.net/af/c5fa06/00000000000000003b9b1557/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n1&v=3") format("woff2"),url("https://use.typekit.net/af/c5fa06/00000000000000003b9b1557/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n1&v=3") format("woff"),url("https://use.typekit.net/af/c5fa06/00000000000000003b9b1557/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n1&v=3") format("opentype");
+font-display:auto;font-style:normal;font-weight:100;
+}
+
+@font-face {
+font-family:"bebas-neue-by-fontfabric";
+src:url("https://use.typekit.net/af/88cc55/00000000000000003b9b155a/27/l?subset_id=2&fvd=n3&v=3") format("woff2"),url("https://use.typekit.net/af/88cc55/00000000000000003b9b155a/27/d?subset_id=2&fvd=n3&v=3") format("woff"),url("https://use.typekit.net/af/88cc55/00000000000000003b9b155a/27/a?subset_id=2&fvd=n3&v=3") format("opentype");
+font-display:auto;font-style:normal;font-weight:300;
+}
+
+.tk-titular { font-family: "titular",sans-serif; }
+.tk-bebas-neue-by-fontfabric { font-family: "bebas-neue-by-fontfabric",sans-serif; }
+
+
 
 * {
     box-sizing: border-box;
@@ -57,21 +97,23 @@ li {
     list-style: none;
 }
 
+
 /* ============================================================== */
 /* Containers and Section specifics*/
 /* ============================================================== */
 
-
-
-section.landing, section.featured, section.contact, section.bio {
+section.landing {
+    background: url(/images/Artboard.jpg) no-repeat center center;
+    background-size: 100% auto;
     height: 100vh;
     background-color: #ffffff;
     width: 100vw;
 }
 
-section.landing {
-    background: url(/images/Artboard.jpg) no-repeat center center;
-    background-size: 100% auto;
+section.featured, section.contact, section.bio {
+    height: 100%;
+    background-color: #ffffff;
+    /* width: 100vw; */
 }
 
 /* container specifics */
@@ -83,6 +125,20 @@ section.landing {
 
 .featured-container, .bio-container, .contact-container {
     padding: 0 3rem;
+}
+
+.page-header {
+    padding: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+img.cheveron {
+    width: 25px !important;
+    margin: 0 !important;
+    padding: .2rem !important;
 }
 
 /* ============================================================== */
@@ -101,13 +157,7 @@ div.nav-brand img {
   padding-left: 3rem;
 }
 
-.page-header {
-    padding: 3rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-}
+
 
 /* ============================================================== */
 /* Featured section */
@@ -115,6 +165,62 @@ div.nav-brand img {
 
 
 
+.row {
+  display: flex;
+    justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 4px;
+  border: 1px solid black;
+}
+
+.column {
+  flex: 33%;
+  max-width: 33%;
+  padding: 0 4px;
+}
+
+.item {
+padding-top: 8px;
+  vertical-align: top;
+  width: 100%;
+}
+
+
+
+
+.item-5 {
+    display: flex;
+    justify-content: center;
+    margin-top: 45%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    
+    flex: 50%;
+    max-width: 50%;
+  }
+.column-3 .item-3 {
+   display: none;
+   
+}
+
+.item-5 {
+    
+    margin-top: 0;
+    padding: 25px;
+}
+
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
 
 /* ============================================================== */
 /* media queries */
@@ -142,6 +248,8 @@ div.nav-brand img {
  h2 {
     font-size: 2rem;
     }
+
+   
 }
 
 @media only screen and (max-width: 480px) {

@@ -4,7 +4,7 @@ div.hamburger {
   padding: 1.5rem;
   position: fixed;
   top: 0;
-  right: 0;
+  left: 0;
   cursor: pointer;
   z-index: 5;
   transition: all .5s ease;
@@ -125,7 +125,7 @@ a.nav-link-icon svg {
   div.hamburger {
   position: fixed !important;
   top: 0px !important;
-  right: 0px !important;
+  left: 0px !important;
   padding: 1rem;
   cursor: pointer !important;
   z-index: 5 !important;
