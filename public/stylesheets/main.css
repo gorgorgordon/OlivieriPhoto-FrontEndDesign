@@ -34,6 +34,8 @@ src:url("https://use.typekit.net/af/88cc55/00000000000000003b9b155a/27/l?subset_
 font-display:auto;font-style:normal;font-weight:300;
 }
 
+/* ...most likely will not use this option below but nice to have... */
+
 .tk-titular { font-family: "titular",sans-serif; }
 .tk-bebas-neue-by-fontfabric { font-family: "bebas-neue-by-fontfabric",sans-serif; }
 
@@ -133,6 +135,7 @@ section.featured, section.contact, section.bio {
     flex-direction: row;
     justify-content: center;
     width: 100%;
+   
 }
 
 img.cheveron {
@@ -154,7 +157,7 @@ img.cheveron {
 
 div.nav-brand img {
   width: 35%;
-  padding-left: 3rem;
+  padding-left: 100px;
 }
 
 
@@ -194,6 +197,54 @@ padding-top: 8px;
     margin-top: 45%;
 }
 
+
+
+/* ============================================================== */
+/* Contact section */
+/* ============================================================== */
+
+.form-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    /* z-index: 2; */
+}
+
+form {
+    padding: 1rem;
+}
+
+input, textarea {
+    display: block;
+    box-sizing: border-box;
+    width: 300px;
+    margin-bottom: 1rem;
+    font-family: Helvetica, Arial, sans-serif;
+  font-weight:500;
+  font-size: 18px;
+   line-height: 22px;
+}
+
+textarea {
+    line-height: 150%;
+    height: 10rem;
+    resize:vertical;
+}
+
+
+/* ============================================================== */
+/* media queries */
+/* ============================================================== */
+
+@media only screen and (max-width: 900px) {
+
+ h1 {
+     font-size: 2.3rem;
+ }
+
+}
+
 /* Responsive layout - makes a two column-layout instead of four columns */
 @media screen and (max-width: 800px) {
   .column {
@@ -214,26 +265,6 @@ padding-top: 8px;
 
 }
 
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column {
-    flex: 100%;
-    max-width: 100%;
-  }
-}
-
-/* ============================================================== */
-/* media queries */
-/* ============================================================== */
-
-@media only screen and (max-width: 900px) {
-
- h1 {
-     font-size: 2.3rem;
- }
-
-}
-
 @media only screen and (max-width: 700px) {
 
 section.landing {
@@ -250,6 +281,14 @@ div.nav-brand img {
     }
 
    
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
 }
 
 @media only screen and (max-width: 480px) {

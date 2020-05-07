@@ -41,7 +41,6 @@ div.nav {
   top: 0;
   left: 0;
   padding-top: 50px;
-  z-index: 2;
   overscroll-behavior-y: contain;
 }
 
@@ -65,6 +64,9 @@ div.nav {
 clip-path: circle(1800px at 90% -10%);
 }
 
+.top-level {
+  z-index: 5 !important;
+}
 
 /* ******************************************* */
 /* menu text styling */
