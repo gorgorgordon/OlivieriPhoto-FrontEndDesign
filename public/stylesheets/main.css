@@ -1,45 +1,3 @@
-/*
- * The Typekit service used to deliver this font or fonts for use on websites
- * is provided by Adobe and is subject to these Terms of Use
- * http://www.adobe.com/products/eulas/tou_typekit. For font license
- * information, see the list below.
- *
- * bebas-neue-by-fontfabric:
- *   - http://typekit.com/eulas/00000000000000003b9b1557
- *   - http://typekit.com/eulas/00000000000000003b9b155a
- * titular:
- *   - http://typekit.com/eulas/00000000000000003b9b0484
- *
- * © 2009-2020 Adobe Systems Incorporated. All Rights Reserved.
- */
-/*{"last_published":"2020-03-28 17:42:23 UTC"}*/
-
-@import url("https://p.typekit.net/p.css?s=1&k=bee3ofa&ht=tk&f=35533.37896.37899&a=17545688&app=typekit&e=css");
-
-@font-face {
-font-family:"titular";
-src:url("https://use.typekit.net/af/36242b/00000000000000003b9b0484/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("woff2"),url("https://use.typekit.net/af/36242b/00000000000000003b9b0484/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("woff"),url("https://use.typekit.net/af/36242b/00000000000000003b9b0484/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("opentype");
-font-display:auto;font-style:normal;font-weight:300;
-}
-
-@font-face {
-font-family:"bebas-neue-by-fontfabric";
-src:url("https://use.typekit.net/af/c5fa06/00000000000000003b9b1557/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n1&v=3") format("woff2"),url("https://use.typekit.net/af/c5fa06/00000000000000003b9b1557/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n1&v=3") format("woff"),url("https://use.typekit.net/af/c5fa06/00000000000000003b9b1557/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n1&v=3") format("opentype");
-font-display:auto;font-style:normal;font-weight:100;
-}
-
-@font-face {
-font-family:"bebas-neue-by-fontfabric";
-src:url("https://use.typekit.net/af/88cc55/00000000000000003b9b155a/27/l?subset_id=2&fvd=n3&v=3") format("woff2"),url("https://use.typekit.net/af/88cc55/00000000000000003b9b155a/27/d?subset_id=2&fvd=n3&v=3") format("woff"),url("https://use.typekit.net/af/88cc55/00000000000000003b9b155a/27/a?subset_id=2&fvd=n3&v=3") format("opentype");
-font-display:auto;font-style:normal;font-weight:300;
-}
-
-/* ...most likely will not use this option below but nice to have... */
-
-.tk-titular { font-family: "titular",sans-serif; }
-.tk-bebas-neue-by-fontfabric { font-family: "bebas-neue-by-fontfabric",sans-serif; }
-
-
 
 * {
     box-sizing: border-box;
@@ -48,7 +6,7 @@ font-display:auto;font-style:normal;font-weight:300;
 }
 
 body {
-  background-color: #ffffff;
+  background-color: #000000;
   color: #d2d2d2;
   margin: 0 auto;
   overscroll-behavior: none;
@@ -61,23 +19,26 @@ body {
 }
 
 h1 {
-  font-family: 'bebas-neue-by-fontfabric', 'Roboto', sans-serif;
-  font-weight: 300;
-  font-style: normal;
-  font-size: 3rem;
+font-family: bebas-neue-by-fontfabric, sans-serif;
+font-weight: 700;
+font-style: normal;
+
+/* font-family: bebas-neue, sans-serif; */
+
+font-size: 3rem;
 }
 
 
 h2 {
-  font-family: 'titular', sans-serif;
-font-weight: 300;
+font-family: bebas-neue-by-fontfabric, sans-serif;
+font-weight: 100;
 font-style: normal;
 font-size: 3rem;  
 letter-spacing: 1.8rem;
 }
 
 p {
-font-family: 'titular', sans-serif;
+font-family: 'Roboto', sans-serif;
 font-weight: 300;
 font-style: normal;
 font-size: 2rem;
@@ -91,7 +52,7 @@ a {
 }
 
 a:hover {
-    color: #4999b2;
+    color: #ffffff;
     text-shadow:1px 1px 2px #d2d2d2;
 }
 
@@ -105,16 +66,15 @@ li {
 /* ============================================================== */
 
 section.landing {
-    background: url(/images/Artboard.jpg) no-repeat center center;
-    background-size: 100% auto;
+   
     height: 100vh;
-    background-color: #ffffff;
+    background-color: #000000;
     width: 100vw;
 }
 
 section.featured, section.contact, section.bio {
     height: 100%;
-    background-color: #ffffff;
+    background-color: #000000;
     /* width: 100vw; */
 }
 
@@ -162,40 +122,6 @@ div.nav-brand img {
 
 
 
-/* ============================================================== */
-/* Featured section */
-/* ============================================================== */
-
-
-
-.row {
-  display: flex;
-    justify-content: center;
-  flex-wrap: wrap;
-  padding: 0 4px;
-  border: 1px solid black;
-}
-
-.column {
-  flex: 33%;
-  max-width: 33%;
-  padding: 0 4px;
-}
-
-.item {
-padding-top: 8px;
-  vertical-align: top;
-  width: 100%;
-}
-
-
-
-
-.item-5 {
-    display: flex;
-    justify-content: center;
-    margin-top: 45%;
-}
 
 
 
@@ -468,7 +394,7 @@ div.pic:hover img{
 }
 
 #symbols {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 400;
 }
 
 .footer {
@@ -476,7 +402,8 @@ div.pic:hover img{
     flex-direction: row;
     justify-content: center;
     padding: 1rem;
-    font-family: 'titular', sans-serif;
+    font-family: bebas-neue-by-fontfabric, sans-serif;
+    font-weight: 100;
     font-size: 1rem;
     letter-spacing: .2rem;
     color: #d2d2d2;

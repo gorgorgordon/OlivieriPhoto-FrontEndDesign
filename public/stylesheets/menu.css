@@ -4,10 +4,11 @@ div.hamburger {
   padding: 1.5rem;
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
   cursor: pointer;
   z-index: 5;
   transition: all .5s ease;
+  visibility: hidden;
 }
 
 .rotate-bottom {
