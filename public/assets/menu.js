@@ -7,13 +7,12 @@ const bottom = document.getElementById('rotate-bottom');
 const middle = document.getElementById('remove-center');
 
 hamburger.addEventListener('click', () => {
-console.log('clicked');
+// console.log('clicked');
 navlinks.classList.toggle('open');
 nav.classList.toggle('top-level');
 topper.classList.toggle('rotate-top');
 bottom.classList.toggle('rotate-bottom');
 middle.classList.toggle('remove-center');
-
 });
 
 
