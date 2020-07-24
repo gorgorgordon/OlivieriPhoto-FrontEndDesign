@@ -135,7 +135,7 @@ z-index: 2;
   z-index: 3;
 }
 
-div.nav {
+div.nav, div.ul-alignment {
     visibility: hidden;
 }
 
@@ -246,6 +246,7 @@ div.nav {
                 }
 
                 .ul-alignment {
+                  visibility: visible;
                   width: 100vw;
                   height: 100vh;
                   position: relative;
