@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" minimum-scale="1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="shortcut icon" href="/images/favicon.ico">
 
@@ -15,59 +15,60 @@
   </head>
 
 <body>
+
+
+
+  
 <nav>
+  <!-- Desktop nav bar menu -->
   <ul class="navbar">
     <li class="gallery">
-      <a href="/gallery"><h3>Gallery</h3></a>
+      <a class="link-text" href="/gallery">Gallery</a>
     </li>
     <li class="about">
-      <a href="/#bio-anchor"><h3>About</h3></a>
+      <a class="link-text" href="/#bio-anchor">About</a>
     </li>
     <li class="contact">
-      <a href="/#contactanchor"><h3>Contact</h3></a>
+      <a class="link-text" href="/#contactanchor">Contact</a>
     </li>
   </ul>
+      <div class="hamburger">
+        <div id="rotate-top" class="line"></div>
+        <div id="rotate-bottom" class="line"></div>
+        <div id="remove-center" class="line"></div>
+      </div>
+<!-- Mobile navbar menu -->
+  <ul class="nav-menu">
+    <li class="nav-item-menu">
+        <a class="nav-link" href="/" onclick="hideMenu()">
+        Home
+      </a>
+    </li>
+    <li class="nav-item-menu">
+      <a class="nav-link" href="/gallery" onclick="hideMenu()">
+        Gallery
+      </a>
+    </li>
+    <li class="nav-item-menu">
+      <a class="nav-link" href="/#contactanchor" onclick="hideMenu()">
+        Contact
+      </a>
+    </li>
+    <li class="nav-item-menu">
+      <a class="nav-link" href="/#bio-anchor" onclick="hideMenu()">
+        About
+      </a>
+    </li>
 
+  
 </nav>
 
-<div class="nav"> 
+
   
-   <div class="ul-alignment">  
-      <ul class="nav-links">
-        <li class="nav-item-menu">
-          <a class="nav-link" href="/" onclick="hideMenu()">
-            <h1 class="title-text">Home</h1>
+  
+    
         
-          </a>
-        </li>
-        <li class="nav-item-menu">
-            <a class="nav-link" href="/gallery" onclick="hideMenu()">
-              <h1 class="title-text">Gallery</h1>
-              
-            </a>
-        </li>
-      
-      
-        <li class="nav-item-menu">
-            <a class="nav-link" href="/#contactanchor" onclick="hideMenu()">
-            <h1 class="title-text">Contact</h1>
-            </a>
-        </li>
-      
-        <li class="nav-item-menu">
-            <a class="nav-link" href="/#bio-anchor" onclick="hideMenu()">
-            <h1 class="title-text">Bio</h1>
-            </a>
-        </li>
-        <li class="nav-item-menu-icon" id="icon-placement">
-          <a class="nav-link-icon" href="#" onclick="hideMenu()">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#d2d2d2" width="50px" height="50px">
-              <path
-                d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
-              </svg>
-          </a>
-        </li>
-      
+<div>      
         <% if(currentUser){ %>
         <li class="nav-item-menu">
           <a class="nav-link" href="/logout">LogOut</a>
@@ -76,13 +77,9 @@
         
       </ul>
     </div>
-          <div class="hamburger">
-            <div id="rotate-top" class="line"></div>
-            <div  id="rotate-bottom" class="line"></div>
-            <div id="remove-center"  class="line"></div>
-          </div>
+         
         
-    </div>
+   
 
 
   
