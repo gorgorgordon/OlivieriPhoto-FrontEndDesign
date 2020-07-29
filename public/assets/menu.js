@@ -17,16 +17,15 @@ middle.classList.toggle('remove-center');
 });
 
 
-// function hideMenu() {  
-//  if (navMenu.classList.contains("active")) {
-//    navMenu.classList.remove("active");
-//    navLinks.classList.add("link-active");
-//    topper.classList.remove("rotate-top");
-//    bottom.classList.remove("rotate-bottom");
-//    middle.classList.remove("remove-center");
-//  }
+function hideMenu() {  
+ if (navMenu.classList.contains("active")) {
+   navMenu.classList.remove("active");
+   topper.classList.remove("rotate-top");
+   bottom.classList.remove("rotate-bottom");
+   middle.classList.remove("remove-center");
+ }
 
-// }
+}
 
 
 
