@@ -243,6 +243,7 @@ right: 7%;
 
   nav {
     justify-content: flex-end;
+    overflow-x: hidden !important;
   }
 
   .navbar li {
