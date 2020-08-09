@@ -59,6 +59,7 @@ const storage = cloudinaryStorage({
   cloudinary: cloudinary,
   folder: 'oliveri.foto',
   allowedFormats: ['jpeg', 'jpg', 'png'],
+  transformation: [{ width: 500, height: 500, crop: 'limit' }],
   filename: function (req, file, cb) {
   	let buf = crypto.randomBytes(16);
   	buf = buf.toString('hex');

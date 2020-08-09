@@ -20,7 +20,7 @@
 
 
 <div class="container"> 
-  <!-- <h1>.gallery</h1> -->
+  <h1>Gallery</h1>
   <% if(currentUser){ %>
   <div class="d-flex justify-content-center" style="margin-bottom: 50px;">
   <a href="/gallery/new" class="btn btn-outline-light" id="add">ADD</a>
@@ -28,6 +28,7 @@
   <% } %>
       <div class="container gallery">
           <div class="section1">
+
                   <% images.forEach(function(image){ %>
                       <div class="pic red">
                           <img src="<%= image.url %>">
@@ -41,6 +42,8 @@
                       </div>
                       <% } %>
                   <% }) %>
+
+                  
           </div>
       </div>
 </div>  
