@@ -12,8 +12,8 @@
 
 
 <section class="bio">
-  <div class="bio-container">
-    <h2 class="bio-title" id="bio-anchor"><span class="hide">My name is Federico and&nbsp;</span>welcome to my work...</h2>
+  <div class="bio-container" id="bio-anchor">
+    <h2 class="bio-title"><span class="hide">My name is Federico and&nbsp;</span>welcome to my work...</h2>
     <div class="paragraph-text">
       <p><span class="hide">I have lived all over the world but currently reside in Toronto, Canada.
         <br><br></span>
@@ -35,21 +35,34 @@
 
 <section class="contact">
   <div class="contact-container">
-    <h2 class="contact-title">Let's talk</h2>
+    <h2 class="contact-title" id="contact-anchor">Let's talk</h2>
     <div class="form-wrapper">
       
-      <form>
+      <form id="contact-form" action="send" method="POST">
         <label>Name</label>
-        <input type="text">
+        <input type="text" name="name" placeholder="Your name goes here">
         <label>Email</label>
-        <input type="text">
+        <input type="email" name="email" placeholder="Your email address goes here">
         <label>Message</label>
-        <textarea name="message" id="form-message" cols="30" rows="10"></textarea>
-        <button class="submit-btn" type="submit"><i class="material-icons">email</i>Send</button>
+        <textarea name="message" id="form-message" cols="30" rows="10" placeholder="Let's talk..."></textarea>
+        <button class="submit-btn" type="submit" value="Send"><i class="material-icons">email</i>Send</button>
       </form>
     </div>
-    
-
+<!-- <div class="container flash">
+        
+        <% if(error && error.length > 0){ %>
+            <div class="alert-danger" role="alert">
+                <%= error %>
+            </div>
+        <% } %>
+        
+        <% if(success && success.length > 0){ %>
+            <div class="alert-primary" role="alert">
+                <%= success %>
+            </div>
+        <% } %>
+        
+</div> -->
   </div>
   <div class="footer">
 

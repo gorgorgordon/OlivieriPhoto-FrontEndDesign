@@ -1,15 +1,15 @@
 require('dotenv').config();
-const express = require('express');
-const app = express();
-const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
-const flash = require('connect-flash');
-const passport = require('passport');
-const LocalStrategy = require('passport-local');
-const methodOverride = require('method-override');
-
-const User = require('./models/users');
-const Image = require('./models/image');
+const express = require('express'),
+      app = express(),
+      bodyParser = require('body-parser'),
+      mongoose = require('mongoose'),
+      flash = require('connect-flash'),
+      passport = require('passport'),
+      LocalStrategy = require('passport-local'),
+      methodOverride = require('method-override'),
+      nodemailer = require('nodemailer');
+const User = require('./models/users'),
+      Image = require('./models/image');
 
 
 //mongoose.connect(process.env.DATABASEURL, {useNewUrlParser: true});
@@ -77,7 +77,53 @@ const upload = multer({ storage });
 //====================================================
 //INDEX ROUTE
 app.get('/', (req, res) => {
-    res.render('landing');
+    res.render("landing");
+});
+  
+app.post('/send', (req, res) => {
+  const output = `
+  <h3> You have a new contact request</h3>
+  <p style="font-weight: bold">Contact details</p>
+  <ul>
+  <li>Name: ${req.body.name}</li>
+  <li>Email: ${req.body.email}</li>
+  </ul>
+  <p style="font-weight: bold"> Message </p>
+   <p>${req.body.message}
+  `;
+
+  // console.log(req.body);
+
+  let transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: process.env.EMAIL,
+      pass: process.env.GMAILPW
+    },
+  });
+
+  let mailOptions = {
+    from: 'OlivieriPhoto',
+    to: process.env.EMAIL,
+    subject: 'You have a contact request from OlivieriPhoto.com',
+    text: 'It works',
+    html: output
+  };
+
+  transporter.sendMail(mailOptions, function(err, data) {
+    if (err) {
+      console.log('Error:', err);
+      
+    } else {
+      console.log('Message Sent!');
+     
+    }
+
+
+  });
+
+  res.redirect('/');
+
 });
 
 //GALLERY ROUTES **************************************

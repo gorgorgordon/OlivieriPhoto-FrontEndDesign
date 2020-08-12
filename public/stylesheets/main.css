@@ -47,11 +47,19 @@ h2 {
 font-family: bebas-neue-by-fontfabric, sans-serif;
 font-weight: 300;
 font-style: normal;
+font-size: 1.8rem;  
+letter-spacing: .2rem;
+line-height: 2rem;
+}
+
+.pagetitle {
+font-family: bebas-neue-by-fontfabric, sans-serif;
+font-weight: 300;
+font-style: normal;
 font-size: 1.5rem;  
 letter-spacing: .2rem;
 line-height: 1.8rem;
 }
-
 
 p, label, button {
 font-family: 'Roboto', sans-serif;
@@ -509,6 +517,8 @@ form {
 label {
   padding-top: .8rem;
   padding-bottom: .2rem;
+  font-size: 17px !important;
+  line-height: 22px !important;
 }
 
 input {
@@ -534,14 +544,22 @@ textarea {
   border: hidden;
 }
 
-
+::placeholder {
+font-family: 'Roboto', sans-serif;
+font-weight: 300;
+font-style: normal;
+font-size: 13px;
+line-height: 18px;
+}
 
 .submit-btn {
-  padding: 8px 20px;
+  padding: 10px 16px;
   background-color: #000000;
   border: 1px solid #ffffff;
   color: #ffffff;
   font-weight: bold;
+  font-size: 17px !important;
+  line-height: 22px !important;
 }
 
 .submit-btn:hover {
@@ -567,13 +585,26 @@ textarea {
 
 
 
-/* Flash ux container */
+/* Flash ui container */
 .container-flash {
-    margin-top: 100px;
-    margin-bottom: -130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    width: 75%;
+    padding: 20px;
+    background-color:#ffffff;
+    color: #000000;
+}
+.alert-danger {
+ background-color:red;
+ color: #ffffff;
 }
 
+.alert-primary {
+ background-color:green;
+ color: #ffffff;
+}
 
 
 
