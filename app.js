@@ -22,7 +22,7 @@ const User = require('./models/users'),
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(require('express-session')({
-    secret: 'Maximillian has to have Surgery',
+    secret: process.env.SESSIONSECRET,
     resave: false,
     saveUninitialized: false
 }));
@@ -50,14 +50,14 @@ const crypto = require('crypto');
 const multer = require('multer');
 const cloudinary = require('cloudinary');
 cloudinary.config({
-	cloud_name: 'danieltisue',
+	cloud_name: process.env.CLOUDNAME,
     api_key: process.env.CLOUDINARY_API_KEY, 
     api_secret: process.env.CLOUDINARY_API_SECRET
 });
 const cloudinaryStorage = require('multer-storage-cloudinary');
 const storage = cloudinaryStorage({
   cloudinary: cloudinary,
-  folder: 'oliveri.foto',
+  folder: process.env.CLOUDFOLDER,
   allowedFormats: ['jpeg', 'jpg', 'png'],
 
 //   added below transformation config for image rendering optimzation
@@ -113,17 +113,11 @@ app.post('/send', (req, res) => {
   transporter.sendMail(mailOptions, function(err, data) {
     if (err) {
       console.log('Error:', err);
-      
     } else {
       console.log('Message Sent!');
-     
     }
-
-
   });
-
   res.redirect('/');
-
 });
 
 //GALLERY ROUTES **************************************

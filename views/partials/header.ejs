@@ -20,6 +20,11 @@
 <nav>
   <!-- Desktop nav bar menu -->
   <ul class="navbar">
+    <li class="home">
+      <a class="link-text" href="/" >
+        <i class="material-icons">home</i>Home
+      </a>
+    </li>
     <li class="gallery">
       <a class="link-text" href="/gallery"><i class="material-icons">view_module</i>Gallery</a>
     </li>
@@ -29,6 +34,11 @@
     <li class="contact">
       <a class="link-text" href="/#contact-anchor"><i class="material-icons">chat_bubble</i>Contact</a>
     </li>
+    <% if(currentUser){ %>
+    <li class="nav-item-menu">
+      <a class="nav-link" href="/logout"><i class="material-icons">account_circle</i>LogOut</a>
+    </li>
+    <% } %>
   </ul>
       <div class="hamburger">
         <div id="rotate-top" class="line"></div>
@@ -57,7 +67,11 @@
         <i class="material-icons">accessibility_new</i>About
       </a>
     </li>
-
+<% if(currentUser){ %>
+<li class="nav-item-menu">
+  <a class="nav-link" href="/logout" onclick="hideMenu()"><i class="material-icons">account_circle</i>LogOut</a>
+</li>
+<% } %>
   
 </nav>
 
@@ -66,15 +80,7 @@
   
     
         
-<!-- <div>      
-        <% if(currentUser){ %>
-        <li class="nav-item-menu">
-          <a class="nav-link" href="/logout">LogOut</a>
-        </li>
-        <% } %>
-        
-      </ul>
-    </div> -->
+
          
         
    

@@ -20,10 +20,10 @@
 
 
 <div class="container"> 
-  <h1>Gallery</h1>
+  <h2 class="gallery-title">Gallery</h2>
   <% if(currentUser){ %>
-  <div class="d-flex justify-content-center" style="margin-bottom: 50px;">
-  <a href="/gallery/new" class="btn btn-outline-light" id="add">ADD</a>
+  <div>
+  <a href="/gallery/new" class="btn" id="add"><i class="material-icons">add</i>ADD</a>
   </div>
   <% } %>
       <div class="container gallery">
@@ -34,10 +34,10 @@
                           <img src="<%= image.url %>">
                       </div>
                       <% if(currentUser){ %>
-                      <div class="buttons edit">
-                              <a class="btn btn-outline-light btn-sm" href="/gallery/<%= image._id %>/edit">EDIT</a>
-                              <form action="/gallery/<%= image._id %>?_method=DELETE" style="display:inline;" method="POST">
-                              <button class="btn btn-outline-light btn-sm">DELETE</button>   
+                      <div class="button-wrapper">
+                              <a class="btn" href="/gallery/<%= image._id %>/edit"><i class="material-icons">content_copy</i>EDIT</a>
+                              <form action="/gallery/<%= image._id %>?_method=DELETE"  method="POST">
+                              <button class="btn"><i class="material-icons">clear</i>DELETE</button>   
                               </form>
                       </div>
                       <% } %>
