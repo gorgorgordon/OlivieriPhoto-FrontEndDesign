@@ -1,21 +1,12 @@
 <% include ./partials/header %>
 
-<h1>Welcome Federico!</h1>
 
-<div class="container one rounded">
-<form action="/gallery/<%= image._id %>?_method=PUT" method="POST" enctype="multipart/form-data">
-    <h6>Replace the url of images you want to upload below or Choose from a specific folder...</h6>
-    <div class="row">
-        <label for="chooseFile" class="col-sm-4 col-form-label">Choose from folder:</label>
-        <div class="form-group col-md-6">
-        <input type="file" class="form-control-file"  name="image" id="chooseFile">
-        </div>
-    </div>
-    <div class="form-group row justify-content-center">
-    <div class="col-sm-10" >
-      <button type="submit" class="edit-btn">Submit</button>
-    </div>
-  </div>
+<h2 class="edit-title">Choose the image you would like to replace</h2>
+<div class="edit-container">
+<form class="edit-form" action="/gallery/<%= image._id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+    <label class="edit-form-item" for="chooseFile">Choose from folder:</label>
+    <input class="edit-form-item" type="file" name="image" id="chooseFile">
+    <button class="edit-form-item submit-btn" type="submit" class="edit-btn">Submit</button>
 </form>
 </div>
 

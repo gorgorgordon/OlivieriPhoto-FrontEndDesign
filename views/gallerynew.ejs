@@ -1,21 +1,12 @@
 <% include ./partials/header %>
 
-<h1>Welcome Federico!</h1>
+<h2 class="edit-title">Select the images you want uploaded </h2>
 
-<div class="container one rounded">
-<form action="/gallery" method="POST" enctype="multipart/form-data">
-    <h6>Enter the images you want uploaded below or Choose from a specific folder...</h6>
-    <div class="row">
-    <label for="chooseFile" class="col-sm-4 col-form-label">Choose from folder:</label>
-    <div class="form-group col-md-6">
-    <input type="file" class="form-control-file" name="image" id="chooseFile">
-    </div>
-    </div>
-    <div class="form-group row justify-content-center">
-    <div class="col-sm-8" >
-      <button type="submit" class="btn btn-outline-light btn-block">Submit</button>
-    </div>
-  </div>
+<div class="edit-container">
+<form class="edit-form" action="/gallery" method="POST" enctype="multipart/form-data">
+    <label for="chooseFile" class="edit-form-item">Choose from folder:</label>
+    <input type="file" class="edit-form-item" name="image" id="chooseFile">
+      <button type="submit" class="edit-form-item submit-btn">Submit</button>
 </form>
 </div>
 
