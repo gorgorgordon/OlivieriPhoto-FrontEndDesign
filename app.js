@@ -61,7 +61,7 @@ const storage = cloudinaryStorage({
   allowedFormats: ['jpeg', 'jpg', 'png'],
 
 //   added below transformation config for image rendering optimzation
-  transformation: [{ width: 500, height: 500, crop: 'limit' }],
+  transformation: [{ height: 300, crop: 'scale' }],
   
   filename: function (req, file, cb) {
   	let buf = crypto.randomBytes(16);
