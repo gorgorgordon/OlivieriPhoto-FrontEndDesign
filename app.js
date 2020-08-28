@@ -11,12 +11,9 @@ const express = require('express'),
 const User = require('./models/users'),
       Image = require('./models/image');
 
-
+mongoose.connect(process.env.DATABASEURLTWO, {useNewUrlParser: true,  useUnifiedTopology: true});
 //mongoose.connect(process.env.DATABASEURL, {useNewUrlParser: true});
- mongoose.connect("mongodb://localhost:27017/oliveri_photo", {
-   useUnifiedTopology: true,
-   useNewUrlParser: true
- });
+
 
 
 app.set('view engine', 'ejs');
