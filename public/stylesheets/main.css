@@ -17,17 +17,9 @@ font-size: 16px;
 line-height: 22px;
 background-color: #000000;
 color: #d2d2d2;
-/* margin: 0 auto; */
 overflow-x: hidden;
-
-  /* overscroll-behavior: none; */
-  /* -ms-overflow-style: none;  Internet Explorer 10+ */
-    /* scrollbar-width: none;  Firefox */
 }
 
-/* ::-webkit-scrollbar {
-    display: none;
-} */
 
 body::after {
   content: '';
@@ -35,23 +27,35 @@ body::after {
   height: 1px; /* Set same as footer's height- not sure this is right though */
 }
 
+.anim {
+  opacity: 0;
+}
+
+/* -----General Animations-------- */
+
 @keyframes slideInFromLeft {
   0% {
     transform: translateX(-100%);
+    opacity: 0;
   }
   100% {
     transform: translateX(0);
+    opacity: 1;
   }
 }
 
 @keyframes slideInFromRight {
   0% {
     transform: translateX(100%);
+    opacity: 0;
   }
   100% {
     transform: translateX(0);
+    opacity: 1;
   }
 }
+
+/* ------------------------------- */
 
 footer {
   position: relative;
@@ -120,7 +124,6 @@ a, .btn {
   text-decoration: none;
   color: #ccc9c9de;
   cursor: pointer;
-  /* transition: all .2s ease; */
 }
 
 a:hover, .btn:hover {
@@ -193,11 +196,7 @@ nav {
 
 .active {
   transform: translateX(0%) !important;
-  
 }
-
-
-
 
   .rotate-bottom {
   transform: rotate(-45deg) translate(7px, -8px);
@@ -226,7 +225,7 @@ width: 15%;
 max-height: 80%;
 position: absolute;
 bottom: 15%;
-left: -2%;
+left: -2.5rem;
 animation: 1s ease-out 0s 1 slideInFromLeft;
 }
 
@@ -249,21 +248,31 @@ animation: 1s ease-out 0s 1 slideInFromLeft;
 
 /* MEDIA QUERIES */
 /* ----------------------------------------------- */
+
 @media screen and (max-width: 1775px) {
 
     .image-gallery {
       justify-content: center !important;
-      /* padding: 10px; */
     }
-
 }
 
-@media screen and (min-width: 1025px) and (max-width:1500px) {
+@media screen and (min-width: 1651px) and (max-width:1700px) {
   .logotext {
-    padding-left: 60px !important;
+    padding-left: 1.2rem !important;
   }
 }
 
+@media screen and (min-width: 1515px) and (max-width:1651px) {
+  .logotext {
+    padding-left: 2rem !important;
+  }
+}
+
+@media screen and (min-width: 1025px) and (max-width:1515px) {
+  .logotext {
+    padding-left: 4rem !important;
+  }
+}
 
 @media screen and (max-width: 1024px) {
 
@@ -343,11 +352,6 @@ line-height: 2rem;
   justify-content: center !important;
   padding: 10px;
 }
-
-   /* .image-gallery-item img {
-     width: 400px !important;
-     height: auto;
-   } */
  
 }
 
@@ -367,7 +371,7 @@ line-height: 2rem;
 
 /* MOBILE RENDERING */
 
- @media screen and (max-width: 480px) { 
+ @media screen and (max-width: 650px) { 
 
    /* Hide scrollbar for Chrome, Safari and Opera */
 ::-webkit-scrollbar {
@@ -452,8 +456,7 @@ section.landing {
   display: flex !important;
   justify-content: center !important;
   width:  100% !important;
-  /* font-size: 21px !important;
-  line-height: 27px !important; */
+  opacity: 0;
 }
 
 .bio-photo {
@@ -467,20 +470,19 @@ section.landing {
 }
 
 .paragraph-text {
-  /* position: static !important; */
   display: flex !important;
   width: 100% !important;
   height: 80vh !important;
   justify-content: center !important;
   align-items: center !important;
   padding-top: 0 !important;
+  opacity: 0;
 }
 
 .paragraph-text p {
   position: relative !important;
   padding: 0 !important;
   z-index: 1 !important;
-  /* margin: 0 !important;  */
   font-size: 17px !important;
   line-height: 22px !important;
   font-weight: 100 !important;
@@ -525,21 +527,6 @@ h2.gallery-title {
 
  @media screen and (max-width: 325px) {
 
-
-/* body {
-    overflow-x: hidden !important;
-    overscroll-behavior-x: none !important;
-    overscroll-behavior-y: none !important;
-    overscroll-behavior: none !important; 
-    -ms-overflow-style: none !important;  
-    scrollbar-width: none !important;  
-
-  }
-    ::-webkit-scrollbar {
-    display: none !important;
-  } */
-
-
    .hide {
      display: none !important;
    }
@@ -566,7 +553,8 @@ h2.gallery-title {
    }
 
    .paragraph-text p {
-     /* margin-top: 1.5rem !important; */
+     font-size: 15px !important;
+     line-height: 21px !important;
      padding: .5rem !important;
      backdrop-filter: none !important;
    }
@@ -596,7 +584,6 @@ section.landing {
     background-image: url(https://res.cloudinary.com/danieltisue/image/upload/v1597503726/oliveri.foto/WebsiteAssets/TEST_FO_BckGrnd_Portrait-FinalImage.jpg);
     background-repeat: no-repeat;
     background-position: bottom 0 left 0;
-    /* background-size: 66vw; */
     height: 100vh;
     background-color: #000000;
     width: 100vw;
@@ -604,10 +591,8 @@ section.landing {
 }
 
 section.contact, section.bio {
-    
     height: 100vh;
     background-color: #000000;
-    /* width: 100vw; */
 }
 
 section.contact {
