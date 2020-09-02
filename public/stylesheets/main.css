@@ -596,7 +596,7 @@ section.contact, section.bio {
 }
 
 section.contact {
-  background-image: url(../images/FO_BckGrnd_Portrait-FinalImage.jpg);
+  background-image: url(https://res.cloudinary.com/danieltisue/image/upload/v1599006596/oliveri.foto/WebsiteAssets/ContactPhoto-Background-GEAR.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh !important;
