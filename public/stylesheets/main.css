@@ -736,6 +736,10 @@ line-height: 18px;
   transition: .4s ease-in;
 }
 
+.back {
+  padding-left: 2rem;
+}
+
 /* **************Edit Form************************ */
 
 .edit-title {
