@@ -114,7 +114,8 @@ app.post('/send', (req, res) => {
       console.log('Message Sent!');
     }
   });
-  res.redirect('/');
+   req.flash("success", "Your message has been sent!");
+   res.redirect('/');
 });
 
 //GALLERY ROUTES **************************************
