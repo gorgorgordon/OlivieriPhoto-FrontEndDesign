@@ -11,7 +11,10 @@ const express = require('express'),
 const User = require('./models/users'),
       Image = require('./models/image');
 
-mongoose.connect(process.env.DATABASEURLTWO, {useNewUrlParser: true,  useUnifiedTopology: true});
+mongoose.connect(process.env.DATABASEURLTWO, {
+  useNewUrlParser: true,  
+  useUnifiedTopology: true
+});
 //mongoose.connect(process.env.DATABASEURL, {useNewUrlParser: true});
 
 
@@ -250,9 +253,9 @@ function isLoggedIn(req, res, next){
     res.redirect('/');
 }
 
-app.listen(3000, () => {
-    console.log("Server Started!");
-})
-// app.listen(process.env.PORT, process.env.IP, () => {
-//     console.log('Server Started!');
-// });
+// app.listen(3000, () => {
+//     console.log("Server Started!");
+// })
+app.listen(process.env.PORT, process.env.IP, () => {
+    console.log('Server Started!');
+});
