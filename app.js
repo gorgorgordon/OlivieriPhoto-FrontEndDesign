@@ -28,7 +28,6 @@ app.use(express.static(__dirname + '/public'));
 app.use(methodOverride('_method'));
 app.use(flash());
 
-
 //PASSPORT AUTH
 app.use(passport.initialize());
 app.use(passport.session());
@@ -53,7 +52,6 @@ cloudinary.config({
     api_secret: process.env.CLOUDINARY_API_SECRET
 });
 const cloudinaryStorage = require('multer-storage-cloudinary');
-const { hideAlert } = require('./public/js/asset');
 const storage = cloudinaryStorage({
   cloudinary: cloudinary,
   folder: process.env.CLOUDFOLDER,
@@ -111,22 +109,20 @@ app.post('/send', (req, res) => {
 
   transporter.sendMail(mailOptions, function(err, data) {
     if (err) {
-      console.log('Error:', err);
+       req.flash('error', 'Message not sent! Please send your email to info.olivieriphoto@gmail.com. Click on this alert to close.');
     } else {
-      console.log('Message Sent!');
+       req.flash("success", "Your message has been sent! Click on this alert to close.");
+        res.redirect('/');
     }
   });
-    req.flash("success", "Your message has been sent!");
-   res.redirect('/');
- 
+  
 });
 
 //GALLERY ROUTES **************************************
 app.get('/gallery', (req, res) => {
     Image.find({}, (err, images) => {
         if(err) {
-            req.flash('error', 'Images not found!');
-            //console.log(err, 'error'); 
+            req.flash('error', 'Images not found! Click on this alert to close.');
         } else {
             res.render('gallery', { images });
         }
@@ -146,10 +142,10 @@ app.post('/gallery', isLoggedIn, upload.single('image'), (req, res) => {
     };
     Image.create(req.body.image, err => {
       if (err){
-         req.flash('error', 'UH OH...Something went wrong!');
+         req.flash('error', 'UH OH...Something went wrong! Click on this alert to close.');
          res.redirect('/gallery');
       } else{
-        req.flash('success', 'Image successfully uploaded!');
+        req.flash('success', 'Image successfully uploaded! Click on this alert to close.');
         res.redirect('/gallery'); 
       } 
     });
@@ -160,7 +156,7 @@ app.get('/gallery/:id/edit', isLoggedIn, (req, res) => {
     //find the image with provided ID
     Image.findById(req.params.id, (err, image) => {
         if(err){
-            req.flash('error', 'Image not found');
+            req.flash('error', 'Image not found. Click on this alert to close.');
             //console.log(err);
         } else {
             res.render('galleryedit', { image });
@@ -172,7 +168,7 @@ app.get('/gallery/:id/edit', isLoggedIn, (req, res) => {
 app.put('/gallery/:id', isLoggedIn, upload.single('image'), (req, res) => {
   Image.findByIdAndUpdate(req.params.id, req.body.image, async (err, image) => {
       if(err){
-          req.flash('error', 'UH OH...Something went wrong!');
+          req.flash('error', 'UH OH...Something went wrong! Click on this alert to close.');
           res.redirect('/gallery');
       } else {
         if (req.file) {
@@ -186,7 +182,7 @@ app.put('/gallery/:id', isLoggedIn, upload.single('image'), (req, res) => {
               return res.redirect('back');
           }
         }
-        req.flash('success', 'Image successfully updated!');
+        req.flash('success', 'Image successfully updated! Click on this alert to close.');
         res.redirect('/gallery');
       }
   }); 
@@ -196,12 +192,12 @@ app.put('/gallery/:id', isLoggedIn, upload.single('image'), (req, res) => {
 app.delete('/gallery/:id', isLoggedIn, (req, res) => {
     Image.findById(req.params.id, async (err, image) => {
       if(err) {
-          req.flash('error', 'UH OH...Something went wrong!');
+          req.flash('error', 'UH OH...Something went wrong! Click on this alert to close.');
           res.redirect('/gallery');
       } else {
           await cloudinary.v2.uploader.destroy(image.public_id);
           await image.remove();
-          req.flash('success', 'Image successfully deleted');
+          req.flash('success', 'Image successfully deleted. Click on this alert to close.');
           res.redirect('/gallery');
       }
     });
@@ -241,7 +237,7 @@ app.post('/secretlogin', passport.authenticate('local', {
 
 app.get('/logout', isLoggedIn, (req, res) =>  {
     req.logout();
-    req.flash('success', 'You have been successfully logged out!');
+    req.flash('success', 'You have been successfully logged out! Click on this alert to close.');
     res.redirect('/gallery');
 });
 
@@ -250,7 +246,7 @@ function isLoggedIn(req, res, next){
     if(req.isAuthenticated()){
         return next();
     }
-    req.flash('error', 'Additional Permissions Needed!');
+    req.flash('error', 'Additional Permissions Needed! Click on this alert to close.');
     res.redirect('/');
 }
 

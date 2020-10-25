@@ -1,9 +1,10 @@
+
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 const topper = document.getElementById('rotate-top');
 const bottom = document.getElementById('rotate-bottom');
 const middle = document.getElementById('remove-center');
-
+const messageAlert = document.querySelector('.alert');
 
 hamburger.addEventListener('click', () => {
 console.log('clicked');
@@ -12,6 +13,10 @@ topper.classList.toggle('rotate-top');
 bottom.classList.toggle('rotate-bottom');
 middle.classList.toggle('remove-center');
 });
+
+function closeAlert() {
+messageAlert.classList.add("close");
+}
 
 
 function hideMenu() {  
