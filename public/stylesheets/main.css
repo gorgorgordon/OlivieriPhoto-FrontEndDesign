@@ -828,6 +828,10 @@ input.edit-form-item {
   opacity: .75;
 }
 
+.close {
+  display: none;
+}
+
 /******************************************/
 /*start of gallery UI*/
 /**********************************/

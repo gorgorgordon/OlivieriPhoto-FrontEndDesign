@@ -28,6 +28,7 @@ app.use(express.static(__dirname + '/public'));
 app.use(methodOverride('_method'));
 app.use(flash());
 
+
 //PASSPORT AUTH
 app.use(passport.initialize());
 app.use(passport.session());
@@ -52,6 +53,7 @@ cloudinary.config({
     api_secret: process.env.CLOUDINARY_API_SECRET
 });
 const cloudinaryStorage = require('multer-storage-cloudinary');
+const { hideAlert } = require('./public/js/asset');
 const storage = cloudinaryStorage({
   cloudinary: cloudinary,
   folder: process.env.CLOUDFOLDER,
@@ -114,8 +116,9 @@ app.post('/send', (req, res) => {
       console.log('Message Sent!');
     }
   });
-   req.flash("success", "Your message has been sent!");
+    req.flash("success", "Your message has been sent!");
    res.redirect('/');
+ 
 });
 
 //GALLERY ROUTES **************************************

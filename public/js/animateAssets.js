@@ -1,4 +1,3 @@
-
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 const topper = document.getElementById('rotate-top');
@@ -44,5 +43,3 @@ entries.forEach(entry => {
 elements.forEach(element => {
 observer.observe(element);
 });
-
-
