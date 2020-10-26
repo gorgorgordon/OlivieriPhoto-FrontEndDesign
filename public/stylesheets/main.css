@@ -67,11 +67,11 @@ footer {
   align-items: center;
   padding: .2rem;
   font-family: bebas-neue-by-fontfabric, sans-serif;
-  font-weight: 100;
-  font-size: 13px;
+  font-weight: 300;
+  font-size: 15px;
   line-height: 25px;
   letter-spacing: .2rem;
-  color: #d2d2d2;
+  color: #ffffff;
 }
 
 .material-icons {
@@ -127,8 +127,8 @@ a, .btn {
 }
 
 a:hover, .btn:hover {
-    font-weight: 300;
-    color: #ffffff;
+  font-weight: 300;
+  color: #ffffff;
   transition: .3s ease-in;
 }
 
@@ -292,22 +292,24 @@ animation: 1s ease-out 0s 1 slideInFromLeft;
 }
 
 @media screen and (max-width: 1024px) {
-
- .container-gallery {
-  border: none !important;
-  } 
  
- nav {
-   padding: 0 3rem !important;
- } 
+nav {
+  padding: 0 3rem !important;
+} 
+
+.link-text {
+  padding-right: 1.5rem !important;
+  font-weight: 300 !important;
+    color: #ffffff !important;
+    font-size: 21px !important;
+    line-height: 27px !important;
+}
 
 h2, .edit-title {
 font-size: 1.8rem;  
 letter-spacing: .2rem;
 line-height: 2rem;
 }
-
-
 
 .bio-title {
   position: static !important;
@@ -364,6 +366,10 @@ line-height: 2rem;
   display: none !important;
  
 }
+
+.container-gallery {
+border: none !important;
+} 
 
 .image-gallery {
   justify-content: center !important;
@@ -436,7 +442,13 @@ body {
 
   .nav-link {
     padding-right: 1.5rem !important;
+    font-weight: 400 !important;
+     color: #ffffff !important;
+     font-size: 17px !important;
+     line-height: 23px !important;
   }
+
+   
  
   /* Hamburger style */
   div.hamburger {
@@ -495,7 +507,7 @@ section.landing {
   height: 80vh !important;
   justify-content: center !important;
   align-items: center !important;
-  padding-top: 0 !important;
+  padding-top: 3rem !important;
   opacity: 0;
 }
 
@@ -505,7 +517,7 @@ section.landing {
   z-index: 1 !important;
   font-size: 17px !important;
   line-height: 22px !important;
-  font-weight: 100 !important;
+  font-weight: 400 !important;
   text-shadow: 1px 1px 2px #000000;
   backdrop-filter: none !important;
 }
@@ -556,6 +568,8 @@ h2.gallery-title {
    nav {
      padding: 0 2rem 0 0 !important;
    }
+
+ 
 
    div.hamburger {
      margin-right: -2rem !important;
