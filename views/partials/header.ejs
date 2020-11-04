@@ -94,12 +94,15 @@
         <% if(error && error.length > 0){ %>
             <div class="alert alert-danger" role="alert" onclick="closeAlert()">
                 <%= error %>
+
+                <i class="material-icons">highlight_off</i>
             </div>
         <% } %>
         
         <% if(success && success.length > 0){ %>
             <div class="alert alert-primary" role="alert" onclick="closeAlert()">
                 <%= success %>
+                <i class="material-icons">highlight_off</i>
             </div>
         <% } %>
         

@@ -113,6 +113,7 @@ font-size: 15px;
  line-height: inherit !important;
  vertical-align: middle !important;
  padding-right: .4rem;
+ cursor: pointer;
 }
 
 h1 {
