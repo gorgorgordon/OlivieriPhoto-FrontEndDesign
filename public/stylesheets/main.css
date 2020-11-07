@@ -578,12 +578,12 @@ section.landing {
 
 form {
   width: 95% !important;
-  height: 70vh !important;
+  height: 60vh !important;
 }
 
 .submit-btn {
   padding: .3rem .5rem !important;
-  height: 100px !important;
+  height: 50px !important;
 }
 
 h2.gallery-title {
