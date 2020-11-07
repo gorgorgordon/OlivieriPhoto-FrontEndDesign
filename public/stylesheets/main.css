@@ -576,14 +576,14 @@ section.landing {
     display: none !important;
   }
 
-  form {
-     width: 95% !important;
-     height: 90% !important;
-   }
+form {
+  width: 95% !important;
+  height: 90% !important;
+}
 
-   .submit-btn {
+.submit-btn {
   padding: .3rem .5rem !important;
-  
+  height: 100px !important;
 }
 
 h2.gallery-title {
@@ -654,6 +654,8 @@ h2.gallery-title {
      width: 250px !important;
      height: auto;
    }
+
+
 
    .footer-icon {
   background-color: #ffffff;
