@@ -1,7 +1,17 @@
 require('dotenv').config();
 const express = require('express'),
-      app = express(),
-      bodyParser = require('body-parser'),
+      app = express();
+
+/* Express-sslify must be before any other thing */
+const enforce = require('express-sslify');
+
+//if (app.get("enve") === "production") {
+/* Spelling mistake env not enve */
+if (app.get("env") === "production") {
+  app.use(enforce.HTTPS({ trustProtoHeader:true }));
+}
+
+const bodyParser = require('body-parser'),
       mongoose = require('mongoose'),
       flash = require('connect-flash'),
       passport = require('passport'),
@@ -25,10 +35,7 @@ app.use(require('express-session')({
     saveUninitialized: false
 }));
 
-if (app.get("enve") === "production") {
-const enforce = require('express-sslify'); 
-app.use(enforce.HTTPS({ trustProtoHeader:true }));
-}
+
 app.use(express.static(__dirname + '/public'));
 app.use(methodOverride('_method'));
 app.use(flash());
