@@ -10,14 +10,12 @@ const express = require('express'),
       nodemailer = require('nodemailer');
 const User = require('./models/users'),
       Image = require('./models/image');
-
+      
 mongoose.connect(process.env.DATABASEURLTWO, {
   useNewUrlParser: true,  
   useUnifiedTopology: true
 });
 //mongoose.connect(process.env.DATABASEURL, {useNewUrlParser: true});
-
-
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
@@ -27,6 +25,10 @@ app.use(require('express-session')({
     saveUninitialized: false
 }));
 
+if (app.get("enve") === "production") {
+const enforce = require('express-sslify'); 
+app.use(enforce.HTTPS({ trustProtoHeader:true }));
+}
 app.use(express.static(__dirname + '/public'));
 app.use(methodOverride('_method'));
 app.use(flash());
